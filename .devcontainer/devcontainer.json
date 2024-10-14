@@ -42,11 +42,9 @@
         "onAutoForward": "notify"
       }
     },
-    "workspaceMount": "source=/workspaces/terraform-provider-azurerm,target=/go/src/github.com/hashicorp/terraform-provider-azurerm,type=bind",
+    "postCreateCommand": "export GOPATH=/go && mkdir -p /go/src/github.com/hashicorp && mv /workspaces/terraform-provider-azurerm /go/src/github.com/hashicorp/terraform-provider-azurerm && cd /go/src/github.com/hashicorp/terraform-provider-azurerm && go mod tidy && export PATH=$GOPATH/bin:$PATH",
+
     "workspaceFolder": "/go/src/github.com/hashicorp/terraform-provider-azurerm",
-    // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "export GOPATH=/go && mkdir -p $GOPATH/src/github.com/hashicorp/terraform-provider-azurerm && export PATH=$GOPATH/bin:$PATH && apt-get update && apt-get install -y terraform ",
-  
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
      "remoteUser": "root"
   }

@@ -42,7 +42,7 @@
         "onAutoForward": "notify"
       }
     },
-    "postCreateCommand": "export GOPATH=/go && mkdir -p /go/src/github.com/hashicorp && mv /workspaces/terraform-provider-azurerm /go/src/github.com/hashicorp/terraform-provider-azurerm && cd /go/src/github.com/hashicorp/terraform-provider-azurerm && go mod tidy && export PATH=$GOPATH/bin:$PATH",
+    "postCreateCommand": "export GOPATH=/go && mkdir -p $GOPATH/src/github.com/hashicorp  && mkdir -p $GOPATH/bin && mv /workspaces/terraform-provider-azurerm $GOPATH/src/github.com/hashicorp/terraform-provider-azurerm && cd $GOPATH/src/github.com/hashicorp/terraform-provider-azurerm && export PATH=$GOPATH/bin:$PATH",
 
     "workspaceFolder": "/go/src/github.com/hashicorp/terraform-provider-azurerm",
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

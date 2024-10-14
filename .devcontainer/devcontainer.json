@@ -44,7 +44,7 @@
     },
     "workspaceFolder": "/go/src/github.com/hashicorp/terraform-provider-azurerm",
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "apt-get update && apt-get install -y terraform && export GOPATH=/go && go mod tidy && export PATH=$GOPATH/bin:$PATH",
+    "postCreateCommand": "export GOPATH=/go && mkdir -p $GOPATH/src/github.com/hashicorp && export PATH=$GOPATH/bin:$PATH && apt-get update && apt-get install -y terraform ",
   
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
      "remoteUser": "root"

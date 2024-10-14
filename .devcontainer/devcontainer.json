@@ -42,7 +42,7 @@
         "onAutoForward": "notify"
       }
     },
-    "workspaceFolder": "/go/src/github.com/hashicorp/terraform-provider-azurerm",
+    "workspaceFolder": "/go/src/github.com/hashicorp/",
     // Use 'postCreateCommand' to run commands after the container is created.
     "postCreateCommand": "export GOPATH=/go && mkdir -p $GOPATH/src/github.com/hashicorp && export PATH=$GOPATH/bin:$PATH && apt-get update && apt-get install -y terraform ",
   
